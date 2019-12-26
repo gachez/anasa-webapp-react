@@ -74,6 +74,39 @@ function App() {
            </div>
         </div>
       </section>
+      <br />
+
+            {/* sculptures section */}
+      <section id="sculptures">
+        <h1 id="sculptures-heading">Sculptures</h1>
+        <br />
+        <div id="sculptures-thumbnail">
+           <div style={{backgroundImage: `url(${ibrahim})`}}>
+              <div className="overlay-1"></div>
+           </div>
+           <div style={{backgroundImage: `url(${afro})`}}>
+              <div className="overlay-1"></div>
+           </div>
+           <div style={{backgroundImage: `url(${afroart})`}}>
+              <div className="overlay-1"></div>
+           </div>
+           <div style={{backgroundImage: `url(${ibrahim})`}}>
+              <div className="overlay-1"></div>
+           </div>
+           <div style={{backgroundImage: `url(${afro})`}}>
+              <div className="overlay-1"></div>
+           </div>
+           <div style={{backgroundImage: `url(${afroart})`}}>
+           <div className="overlay-1"></div>
+           </div>
+        </div>
+      </section>
+      <br />
+
+      <footer>
+        
+      </footer>
+    
     </div>
   );
 }

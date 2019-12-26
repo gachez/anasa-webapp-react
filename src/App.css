@@ -1,10 +1,11 @@
 .menu{
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 80px;
     background-color: #EFEEEA;
     display: flex;
+    z-index: 10;
 } 
 
 #logo{
@@ -79,14 +80,14 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    position: fixed;
+    position: absolute;
     top: 80px;
 
 }
 
 #hero-text{
     padding-top: 10%;
-    height: 100%;
+    height: 78%;
     width: 35%;
     background-color: rgba(0, 0, 0, 0.3);
     text-align: left;
@@ -99,4 +100,83 @@
     position: relative;
     left: 10%;
 
+}
+
+#top-picks{
+    width: 100%;
+    height: 40%;
+    display: grid;
+    display: -ms-grid;
+    position: absolute;
+    top: 100%;
+
+}
+
+#top-picks-heading{
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+    margin-left: 10%;
+
+}
+
+#top-picks-images{
+    position: relative;
+    left: 5%;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#top-picks-images div{
+    margin: 15px;    
+    width: 520px;
+    height: 610px;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#top-picks-images div button{
+    margin: auto;
+    width: 180px;
+    height: 60px;
+    text-align: center;
+    font-size: 15px;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+#paintings{
+    position: absolute;
+    top: 180%;
+    display: grid;
+    width: 100%;
+    height: auto;
+}
+
+#paintings-heading{
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-left: 10%;
+}
+
+#paintings-thumbnail{
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    position: relative;
+    left: 5%;
+    grid-row-gap: 30px ;
+
+}
+#paintings-thumbnail div{
+    width: 400px;
+    height: 450px;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }

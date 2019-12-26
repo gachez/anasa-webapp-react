@@ -2,6 +2,12 @@ import React from 'react';
 import './App.css'
 import cart from './images/shopping-cart.png'
 import search from './images/magnifying-glass.png'
+import firstpaint from './images/first.jpg'
+import afroart from './images/afroart.jpg'
+import afro from './images/afro.jpg'
+import ibrahim from './images/ibrahim-al-salahi.png'
+
+
 
 function App() {
   return (
@@ -31,14 +37,42 @@ function App() {
       {/* this weeks top picks */}
       <section id="top-picks">
         <h1 id="top-picks-heading">Top picks of the week</h1>
+        <br />
         <div id="top-picks-images">
-           <img alt="weekly pick"/>
-           <img alt="weekly pick"/>
-           <img alt="weekly pick"/>
-           <img alt="weekly pick"/>
-           <img alt="weekly pick"/>
+           <div style={{backgroundImage: `url(${ibrahim})`}}><button>Shop Now</button></div>
+           <div style={{backgroundImage: `url(${afro})`}}><button>Shop Now</button></div>
+           <div style={{backgroundImage: `url(${afroart})`}}><button>Shop Now</button></div>
+          
+          
         </div>
 
+      </section>
+      <br />
+
+      {/* paintings section */}
+      <section id="paintings">
+        <h1 id="paintings-heading">Paintings</h1>
+        <br />
+        <div id="paintings-thumbnail">
+           <div style={{backgroundImage: `url(${ibrahim})`}}>
+              <div className="overlay"></div>
+           </div>
+           <div style={{backgroundImage: `url(${afro})`}}>
+              <div className="overlay"></div>
+           </div>
+           <div style={{backgroundImage: `url(${afroart})`}}>
+              <div className="overlay"></div>
+           </div>
+           <div style={{backgroundImage: `url(${ibrahim})`}}>
+              <div className="overlay"></div>
+           </div>
+           <div style={{backgroundImage: `url(${afro})`}}>
+              <div className="overlay"></div>
+           </div>
+           <div style={{backgroundImage: `url(${afroart})`}}>
+           <div className="overlay"></div>
+           </div>
+        </div>
       </section>
     </div>
   );

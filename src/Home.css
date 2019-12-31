@@ -1,106 +1,3 @@
-.menu{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 80px;
-    background-color: #EFEEEA;
-    display: flex;
-    z-index: 10;
-} 
-
-#logo{
-    position: absolute;
-    left: 8%;
-    top: 0;
-    font-size: 24px;
-    font-weight: normal;
-}
-
-#home{
-    position: absolute;
-    left: 35%;
-    top: 15px;
-}
-
-#explore{
-    position: absolute;
-    left: 40%;
-    top: 15px;
-}
-
-#about{
-    position: absolute;
-    left: 45%;
-    top: 15px;
-}
-
-#contact{
-    position: absolute;
-    left: 50%;
-    top: 15px;
-}
-
-#cart{
-    position: absolute;
-    left: 88%;
-    top: 25px;
-}
-
-#cart-number{
-    width: 16px;
-    height: 16px;
-    background-color: blue;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    bottom: 20px;
-    right: 0;
-}
-
-#cart img{
-    width: 25px;
-    height: 25px;
-}
-
-#search{
-    position: absolute;
-    left: 92%;
-    top: 25px;
-    width: 20px;
-    height: 20px;
-}
-
-#hero-img{
-    width: 100%;
-    height: 90vh;
-    background: url(./images/hero-image.jpg);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 80px;
-
-}
-
-#hero-text{
-    padding-top: 10%;
-    height: 78%;
-    width: 35%;
-    background-color: rgba(0, 0, 0, 0.3);
-    text-align: left;
-    color: aliceblue;
-    font-size: 100px;
-    text-transform: capitalize;
-    font-weight: 700;
-    line-height: 110px;
-    margin: 17px 0 49px;
-    position: relative;
-    left: 10%;
-
-}
 
 #top-picks{
     width: 100%;
@@ -127,11 +24,12 @@
     display: flex;
     flex-wrap: wrap;
 }
-
+ 
 
 #top-picks-images div{
     margin: 15px;    
     width: 520px;
+    min-width: 320px;
     height: 610px;
     display: flex;
     background-repeat: no-repeat;
@@ -147,6 +45,11 @@
     font-size: 15px;
     font-family: "Roboto Condensed", sans-serif;
 }
+
+
+
+
+
 
 #paintings{
     position: absolute;
@@ -173,7 +76,8 @@
 
 }
 #paintings-thumbnail div{
-    width: 400px;
+    width: 520px;
+    min-width: 360px;
     height: 450px;
     display: flex;
     background-repeat: no-repeat;
@@ -249,7 +153,8 @@
 
 }
 #sculptures-thumbnail div{
-    width: 400px;
+    width: 520px;
+    min-width: 360px;
     height: 450px;
     display: flex;
     background-repeat: no-repeat;
@@ -265,3 +170,161 @@ footer{
     background-color: #000;
     display: flex;
 }
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #top-picks-heading{
+        width: 100%;
+        text-align: center;
+    }
+ 
+    #top-picks-images{
+        display: grid;
+ 
+    }
+
+    #paintings{
+        top: 340%;
+    }
+
+    #sculptures{
+        top: 600%;
+    }
+
+    footer{
+        top: 850%;
+        width: 140vw;
+    }
+ }
+ 
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+     #top-picks-heading{
+         width: 100%;
+         text-align: center;
+     }
+     #top-picks-images{
+         display: grid;
+         
+     }
+
+     #paintings{
+         top: 340%;
+     }
+
+
+    #sculptures{
+        top: 600%;
+    }
+
+    footer{
+        top: 850%;
+        width: 140vw;
+    }
+
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+     #top-picks-heading{
+         width: 100%;
+         text-align: center;
+     }
+     #top-picks-images{
+         display: grid;
+         
+     }
+
+     #paintings{
+         top: 340%;
+     }
+
+
+    #sculptures{
+        top: 600%;
+    }
+
+    footer{
+        top: 850%;
+        width: 140vw;
+    }
+ }
+ 
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+     #top-picks-heading{
+         width: 400px;
+         text-align: left;
+        
+     }
+ 
+     #top-picks-images{
+         display: flex;
+         
+     }
+     #paintings{
+         top: 300%;
+     }
+
+
+    #sculptures{
+        top: 600%;
+    }
+
+    footer{
+        top: 850%;
+        width: 140vw;
+    }
+ }
+ 
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+     #top-picks-heading{
+         width: 400px;
+         text-align: left;
+     
+     }
+ 
+     #top-picks-images{
+         display: flex;
+         
+     }
+
+     #paintings{
+         top: 185%;
+     }
+
+
+    #sculptures{
+        top: 305%;
+    }
+
+    footer{
+        top: 440%;
+        width: 100%;
+    }
+ }
+
+
+ /* media queries for the height aspect ratio */
+
+ @media only screen and (max-height: 750px){
+     #hero-img{
+         width: 100%;
+     }
+     #paintings{
+         top: 420%;
+     }
+
+     #sculptures{
+         top: 740%;
+     }
+
+     footer{
+         top: 1205%;
+         width: 160%;
+     }
+ }

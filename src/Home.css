@@ -311,20 +311,52 @@ footer{
 
  /* media queries for the height aspect ratio */
 
- @media only screen and (max-height: 750px){
-     #hero-img{
-         width: 100%;
-     }
+ @media only screen and (max-height: 650px){
      #paintings{
-         top: 420%;
+         top: 465%;
      }
 
      #sculptures{
-         top: 740%;
+         top: 835%;
      }
 
      footer{
-         top: 1205%;
-         width: 160%;
+         top: 1250%;
+         width: 200%;
      }
  }
+
+
+ @media only screen and (min-height: 750px){
+    #hero-img{
+        width: 100%;
+    }
+    #paintings{
+        top: 420%;
+    }
+
+    #sculptures{
+        top: 740%;
+    }
+
+    footer{
+        top: 1205%;
+        width: 160%;
+    }
+}
+
+
+
+@media only screen and (min-height: 750px) and (max-height: 900px){
+    #paintings{
+        top: 370%;
+    }    
+    #sculptures{
+        top: 640%;
+    }
+
+    footer{
+        top: 940%;
+    }
+}
+ 

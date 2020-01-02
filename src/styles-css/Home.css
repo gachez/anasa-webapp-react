@@ -80,7 +80,7 @@
 
 /* STYLING FOR THE TOP PICKS SECTION STARTS HERE */
 .card{
-  
+  border: none;
 }
 
 #first-btn{
@@ -102,4 +102,38 @@
 .sculpt{
     position: relative;
     bottom: 40%;
+}
+
+/* STYLING FOR THE FOOTER SECTION */
+.footer{
+    background-color: black;
+    height: 30rem;
+}
+
+#form{
+    margin-top: 2.5rem;
+}
+#links{
+    margin-top: 2.5rem;
+}
+#contdets{
+    margin-top: 2.5rem;
+}
+#copy{
+    margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 768px){
+    #form{
+        margin-top: 0;
+    }    
+    #links{
+        margin-top: 0;
+    }
+    #contdets{
+        margin-top: 0;
+    }
+    #copy{
+        margin-top: 0;
+    }
 }

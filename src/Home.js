@@ -12,12 +12,17 @@ import first from './images/first.jpg'
 import afroart from './images/afroart.jpg'
 import ibrahim from './images/ibrahim-al-salahi.png'
 import woman from './images/womanology.jpg'
-import paint from './images/2971415-PIZGYPIE-7.jpg'
+
 import afro from './images/afro.jpg'
 import download from './images/download.jpeg'
 import village from './images/interesting-village-cultural-african-wallpaper-preview.jpg'
 import wooden from './images/wooden-mask-africa-carved-figure.jpg'
 import modern from './images/Modern_Makonde_carving_in_ebony.jpg'
+import painter from './images/08f180dd1ec69f11f72c2b4db0eca7b0.jpg'
+
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+
+
 
 
 export default class Home extends Component {
@@ -41,7 +46,7 @@ export default class Home extends Component {
         <div className="Homepage" id="home-page">
           
           {/* MENU SECTION STARTS HERE : THIS IS A RESPONSIVE NAVBAR IMPORTED FROM BOOTSTRAP */}
-          <Navbar collapseOnSelect expand="lg" className="menu">
+          <Navbar collapseOnSelect expand="lg" className="menu" fixed="top">
             <Navbar.Brand href="#home">Anasa</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -170,7 +175,7 @@ export default class Home extends Component {
            
            <Col sm={4}>
            <Card className="card">
-              <Card.Img variant="top" src={woman} />
+              <Card.Img variant="top" src={painter} />
               <Button variant="dark" className="shop-btn">Shop Now</Button>
  
             </Card>
@@ -214,6 +219,59 @@ export default class Home extends Component {
          
           </CardDeck>
           {/* SCULPTURES SECTION ENDS HERE */}
+          <br /><br /><br /><br />
+          {/* THE FOOTER SECTION STARTS HERE */}
+            <MDBFooter  className="font-small pt-4 mt-4 footer">
+              <MDBContainer fluid className="text-center text-md-left" style={{marginLeft: '2rem' }}>
+                <MDBRow>
+                  <MDBCol md="4">
+                    <h5 className="title">Subscribe to our Newsletter</h5>
+                    <Form inline  id="form">
+                  <FormControl type="text" placeholder="Subscribe" className="mr-sm-2" />
+                  <Button style={{backgroundColor: 'blue', color: 'white'}}>Subscribe</Button>
+                 </Form>
+                  </MDBCol>
+
+                  <MDBCol md="4">
+                    <h5 className="title">Quick links</h5>
+                    <ul  id="links">
+                      <li className="list-unstyled">
+                        <a href="#!" style={{color:'white'}}>Explore</a>
+                      </li>
+                      <li className="list-unstyled">
+                        <a href="#!" style={{color:'white'}}>About</a>
+                      </li>
+                      <li className="list-unstyled">
+                        <a href="#!" style={{color:'white'}}>Contact</a>
+                      </li>
+                    </ul>
+                  </MDBCol>
+
+
+                  <MDBCol md="4">
+                    <h5 className="title">Contact details</h5>
+                    <ul  id="contdets">
+                      <li className="list-unstyled">
+                        <a href="#!" style={{color:'white'}}>Tel: 07000000</a>
+                      </li>
+                      <li className="list-unstyled">
+                        <a href="#!" style={{color:'white'}}>Email: info@anasaventures.com</a>
+                      </li>
+                      <li className="list-unstyled">
+                        <a href="#!" style={{color:'white'}}>Support: support@anasaventures.com</a>
+                      </li>
+                    </ul>
+                  </MDBCol>
+                </MDBRow>
+              </MDBContainer>
+              <div className="footer-copyright text-center py-3" id="copy">
+                <MDBContainer fluid>
+                  &copy; {new Date().getFullYear()} Copyright: <a href="#" style={{color: 'aliceblue'}}>anasaventures.com </a>
+                </MDBContainer>
+              </div>
+            </MDBFooter>
+
+          {/* THE FOOTER SECTION ENDS HERE */}
 
         </div>
       );

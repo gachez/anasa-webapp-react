@@ -1,0 +1,40 @@
+/* STYLING FOR THE NAVBAR SECTION STARTS HERE */
+.menu{
+    background-color:  #EEECE5 ;
+}
+
+.explore{
+    position: relative;
+    left: 35%;
+}
+
+.about{
+    position: relative;
+    left: 40%;
+}
+
+.contact{
+    position: relative;
+    left: 45%;
+}
+#cart-icon-container{
+    position: relative;
+    right: 25px;
+}
+
+#cart-icon{
+    width: 32px;
+    height: 32px;
+}
+
+#cart-number{
+    position: absolute;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: blue;
+    color: white;
+    text-align: center;
+}
+/* STYLING FOR THE NAVBAR SECTION ENDS HERE */

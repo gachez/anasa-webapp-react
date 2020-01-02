@@ -1,0 +1,168 @@
+.product-description-section{
+    position: relative;
+    top: 20vh;
+}
+.im-slider{
+    position: relative;
+    
+    
+}
+
+#product-title{
+    font-size: 28px;
+    font-weight: 700;
+    color:
+    #2a2a2a;
+    margin-bottom: 10px;
+}
+
+#product-price{
+    font-size: 24px;
+    font-weight: bold;
+    color:
+    #2f7dfc;
+    margin-bottom: 15px;
+}
+
+#category{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#availability{
+    font-size: 14px;
+font-weight: normal;
+}
+
+#details{
+    line-height: 2;
+font-size: 18px;
+margin-bottom: 0px;
+color:
+#606060;
+font-weight: 400;
+}
+
+#add-to-cart{
+    width: 200px;
+    height: 80px;
+        color:
+    #fff;
+    background-color:
+    #2f7dfc;
+    box-shadow: -14.142px 14.142px 20px 0px
+    #2f7dfc;
+    border: 1px solid
+    #2f7dfc;
+}
+
+#add-to-cart:hover{
+    border: 1px solid
+    #fff;
+}
+
+.social-icons{
+    display: flex;
+}
+
+.social-icons img{
+    margin: 15px;
+}
+
+#place-order{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 34px 0 10px;
+}
+
+#place-order::before{
+    content: url(../images/box.png);
+    display: block;
+    position: relative;
+}
+
+#place-order::after{
+    content: 'Once you select a piece of art just place your order';
+    display: block;
+    position: relative;
+    line-height: 2;
+    font-size: 15px;
+    margin-bottom: 0px;
+    color:
+    #606060;
+    font-weight: 400;
+}
+
+
+#schedule{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 34px 0 10px;
+}
+
+#schedule::before{
+    content: url(../images//box-1.png);
+    display: block;
+    position: relative;
+}
+
+#schedule::after{
+    content: 'Once you have placed your order, you will be required to give details of when and where you want to view the artwork';
+    display: block;
+    position: relative;
+    line-height: 2;
+    font-size: 15px;
+    margin-bottom: 0px;
+    color:
+    #606060;
+    font-weight: 400;
+}
+
+#confirm{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 34px 0 10px;
+}
+
+#confirm::before{
+    content: url(../images/product.png);
+    display: block;
+    position: relative;
+}
+
+#confirm::after{
+    content: 'The piece of art is delivered to the viewing location and you get to confirm the quality before purchasing';
+    display: block;
+    position: relative;
+
+line-height: 2;
+font-size: 15px;
+margin-bottom: 0px;
+color:
+#606060;
+font-weight: 400;
+}
+
+#pay{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 34px 0 10px;
+}
+
+#pay::before{
+    content: url(../images/cash-on-delivery.png);
+    display: block;
+    position: relative;
+}
+
+#pay::after{
+    content: 'Once you are satisfied with the quality of your selected piece you can now pay for it and its all yours :)';
+    display: block;
+    position: relative;
+       line-height: 2;
+    font-size: 15px;
+    margin-bottom: 0px;
+    color:
+    #606060;
+    font-weight: 400;
+}

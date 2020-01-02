@@ -11,7 +11,7 @@ export default class Footer extends Component{
             <MDBContainer fluid className="text-center text-md-left" style={{marginLeft: '2rem' }}>
               <MDBRow>
                 <MDBCol md="4">
-                  <h5 className="title">Subscribe to our Newsletter</h5>
+                  <h5 className="title" style={{color: 'white'}}>Subscribe to our Newsletter</h5>
                   <Form inline  id="form">
                 <FormControl type="text" placeholder="Subscribe" className="mr-sm-2" />
                 <Button style={{backgroundColor: 'blue', color: 'white'}}>Subscribe</Button>
@@ -19,7 +19,7 @@ export default class Footer extends Component{
                 </MDBCol>
 
                 <MDBCol md="4">
-                  <h5 className="title">Quick links</h5>
+                  <h5 className="title" style={{color: 'white'}}>Quick links</h5>
                   <ul  id="links">
                     <li className="list-unstyled">
                       <a href="#!" style={{color:'white'}}>Explore</a>
@@ -35,7 +35,7 @@ export default class Footer extends Component{
 
 
                 <MDBCol md="4">
-                  <h5 className="title">Contact details</h5>
+                  <h5 className="title" style={{color: 'white'}}>Contact details</h5>
                   <ul  id="contdets">
                     <li className="list-unstyled">
                       <a href="#!" style={{color:'white'}}>Tel: 07000000</a>

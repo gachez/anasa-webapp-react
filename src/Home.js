@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
-import './Home.css'
-import menu from './images/menu.png'
-import close from './images/cancel.png'
-import Menu from './components/Menu.js'
-import Hero from './components/Hero.js'
-import afroart from './images/afroart.jpg'
-import afro from './images/afro.jpg'
-import ibrahim from './images/ibrahim-al-salahi.png'
-import stars from './images/star.png'
-
+import Navbar from 'react-bootstrap/Navbar'
+import {Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
+import Carousel from 'react-bootstrap/Carousel'
+import './styles-css/Home.css'
+import cart from './images/shopping-cart.png'
+import hero from './images/hero-image.jpg'
+import humble from './images/humble.jpg'
+import sculpture from './images/woman-african-people-black-girl-female.jpg'
 
 export default class Home extends Component {
 
   state={
-    isLoaded: false,
-    dropMenu: 'none',
-    menuIcon: menu
+    isLoaded: false
   }
 
   componentDidMount(){
@@ -24,10 +20,6 @@ export default class Home extends Component {
     })
   }
 
-  toggleMenu = () =>{
-    this.state.dropMenu === 'none' ? this.setState({dropMenu: 'grid'}) : this.setState({dropMenu: 'none'})
-    this.state.menuIcon === menu ? this.setState({menuIcon: close}) : this.setState({menuIcon: menu})
-  }
 
   render(){
     if(this.state.isLoaded){
@@ -35,85 +27,82 @@ export default class Home extends Component {
 
       return (
         <div className="Homepage" id="home-page">
-    
-          {/* menu */}
-          <Menu dropDown={this.state.dropMenu} toggler={this.toggleMenu} icon={this.state.menuIcon}/>
-    
-          {/* hero image slider */}
-         <Hero />
-    
-          {/* this weeks top picks */}
-          <section id="top-picks">
-            <h1 id="top-picks-heading">Top picks of the week</h1>
-            <br />
-            <div id="top-picks-images">
-               <div style={{backgroundImage: `url(${ibrahim})`}}><button>Shop Now</button></div>
-               <div style={{backgroundImage: `url(${afro})`}}><button>Shop Now</button></div>
-               <div style={{backgroundImage: `url(${afroart})`}}><button>Shop Now</button></div>
-              
-              
-            </div>
-    
-          </section>
-          <br />
-    
-          {/* paintings section */}
-          <section id="paintings">
-            <h1 id="paintings-heading">Paintings</h1>
-            <br />
-            <div id="paintings-thumbnail">
-               <div className="overlay-div" style={{backgroundImage: `url(${ibrahim})`}}>
-                  <div className="overlay">
-                    <div className="overlay-stars">
-                      <img src={stars} alt="stars"/>
-                      <img src={stars} alt="stars"/>
-                      <img src={stars} alt="stars"/>
-                      <img src={stars} alt="stars"/>
-                      <img src={stars} alt="stars"/>
-                    </div>
-                    <p id="price-overlay">$900</p>
-                  </div>
-               </div>
-               <div className="overlay-div" style={{backgroundImage: `url(${afro})`}}>
-                  <div className="overlay"></div>
-               </div>
-               <div className="overlay-div" style={{backgroundImage: `url(${afroart})`}}>
-                  <div className="overlay"></div>
-               </div>
-               <div className="overlay-div" style={{backgroundImage: `url(${ibrahim})`}}>
-                  <div className="overlay"></div>
-               </div>
-             
-            </div>
-          </section>
-          <br />
-    
-                {/* sculptures section */}
-          <section id="sculptures">
-            <h1 id="sculptures-heading">Sculptures</h1>
-            <br />
-            <div id="sculptures-thumbnail">
-               <div style={{backgroundImage: `url(${ibrahim})`}}>
-                  <div className="overlay-1"></div>
-               </div>
-               <div style={{backgroundImage: `url(${afro})`}}>
-                  <div className="overlay-1"></div>
-               </div>
-               <div style={{backgroundImage: `url(${afroart})`}}>
-                  <div className="overlay-1"></div>
-               </div>
-               <div style={{backgroundImage: `url(${ibrahim})`}}>
-                  <div className="overlay-1"></div>
-               </div>
-              
-            </div>
-          </section>
-          <br />
-    
-          <footer>
-    
-          </footer>
+          
+          {/* MENU SECTION STARTS HERE : THIS IS A RESPONSIVE NAVBAR IMPORTED FROM BOOTSTRAP */}
+          <Navbar collapseOnSelect expand="lg" className="menu">
+            <Navbar.Brand href="#home">Anasa</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="mr-auto">
+              <NavDropdown title="Explore" id="collasible-nav-dropdown" className="explore">
+                  <NavDropdown.Item href="#action/3.1">Paintings</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">Sculptures</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3">Apparel</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action/3.4">Support</NavDropdown.Item>
+                </NavDropdown>
+                <Nav.Link href="#features" className="about">About</Nav.Link>
+                <Nav.Link href="#pricing" className="contact">Contact</Nav.Link>
+
+              </Nav>
+              <Nav>
+                <Nav.Link href="#deets" id="cart-icon-container">
+                  <img src={cart} id="cart-icon" alt="anasa cart"/>
+                  <p id="cart-number">1</p>
+                </Nav.Link>
         
+                <Form inline>
+                  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                  <Button variant="dark">Search</Button>
+                 </Form>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+          {/* MENU SECTION ENDS HERE */}
+
+
+          {/* HERO SECTION STARTS HERE: THIS IS BASICALY A CAROUSEL OF 3 SLIDES THAT SHOW WHAT THE WEBSITE IS ABOUT */}
+          <Carousel id="hero-img">
+            <Carousel.Item>
+              <img
+                className="hero-images d-block w-100 h-70"
+                src={hero}
+                alt="beautiful African art"
+              />
+              <Carousel.Caption className="hero-caption">
+                <h3>The Best collection of beautiful African Art</h3>
+                <p>One stop shop for all your artistic needs</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="hero-images d-block w-100 h-70"
+                src={humble}
+                alt="beautiful African Art"
+              />
+
+              <Carousel.Caption className="hero-caption">
+                <h3>The Best collection of beautiful African Art</h3>
+                <p>One stop shop for all your artistic needs</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                id="last"
+                className="hero-images d-block w-100 h-70"
+                src={sculpture}
+                alt="beautiful African Art"
+              />
+
+              <Carousel.Caption className="hero-caption">
+                <h3>The best collection of beautiful African Art</h3>
+                <p>One stop shop for all your artistic needs</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+          
+          {/* HERO SECTION ENDS HERE */}
+
         </div>
       );
 

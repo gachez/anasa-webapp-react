@@ -77,3 +77,29 @@
     }
 }
 /* STYLING FOR THE HERO SECTION ENDS HERE */
+
+/* STYLING FOR THE TOP PICKS SECTION STARTS HERE */
+.card{
+  
+}
+
+#first-btn{
+    position: relative;
+    bottom: 45%;
+}
+
+.shop-btn{
+    position: relative;
+    bottom: 25%;
+    left: 25%;
+    
+    padding: 20px;
+    width: 45%;
+
+}
+/* STYLING FOR THE TOP PICKS SECTION ENDS HERE */
+
+.sculpt{
+    position: relative;
+    bottom: 40%;
+}

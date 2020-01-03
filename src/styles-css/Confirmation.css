@@ -1,0 +1,21 @@
+.Thanks{
+    position: relative;
+    text-align: center;
+}
+
+.Thanks::before{
+    content: url(../images/check.png);
+    display: block;
+    position: relative;
+    bottom: 25px;
+    
+}
+
+#ps-note{
+    color : #777777;    
+    font-size: 18px;
+    font-weight: 500;
+
+    margin-bottom: 16px;
+    text-align: center;
+}

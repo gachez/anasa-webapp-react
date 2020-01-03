@@ -1,0 +1,27 @@
+#note{
+    background:
+#fff;
+padding: 20px;
+line-height: 2;
+font-size: 15px;
+margin-bottom: 0px;
+color:
+#606060;
+font-weight: 400;
+}
+
+#complete-order{
+    width: 100%;
+    margin: 25px;
+    padding: 25px;
+border-radius: 50px;
+border: 1px solid #f4f4f4;
+font-size: 15px;
+font-weight: 700;
+color:
+#fff;
+text-transform: uppercase;
+font-weight: 400;
+-webkit-transition: 0.5s;
+transition: 0.5s;
+}

@@ -1,7 +1,7 @@
 
 /* STYLING FOR THE HERO SECTION STARTS HERE */
 .hero-images{
-    height: 90vh;
+    height: 95vh;
     object-fit: cover;
     object-position: top;
 }

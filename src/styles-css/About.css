@@ -9,7 +9,7 @@
     font-size: 24px;
     width: 80%;
     text-align: center;
-    color: rgba(0,0,0,.5);
+    color:black;
 }
 
 #about-paragraph::before{
@@ -19,5 +19,5 @@
     font-weight: 700;
     position: relative;
     bottom: 30px;
-    color: black;
+    color:  rgba(0,0,0,.5);
 }

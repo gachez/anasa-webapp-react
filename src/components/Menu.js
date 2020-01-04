@@ -3,13 +3,14 @@ import Navbar from 'react-bootstrap/Navbar'
 import {Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
 import '../styles-css/component-styles/Menu.css'
 import cart from '../images/shopping-cart.png'
+import logo from '../images/anasa.png'
 
 export default class Menu extends Component{
     render(){
 
         return(
             <Navbar collapseOnSelect expand="lg" className="menu" fixed="top">
-            <Navbar.Brand href="#home">Anasa</Navbar.Brand>
+            <Navbar.Brand href="/"><img src={logo} height="60px" alt="logo"/></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
@@ -20,8 +21,8 @@ export default class Menu extends Component{
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">Support</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#features" className="about">About</Nav.Link>
-                <Nav.Link href="#pricing" className="contact">Contact</Nav.Link>
+                <Nav.Link href="/about" className="about">About</Nav.Link>
+                <Nav.Link href="/contact" className="contact">Contact</Nav.Link>
     
               </Nav>
               <Nav>

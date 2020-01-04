@@ -8,13 +8,13 @@ export default class Footer extends Component{
     render(){
         return(
             <MDBFooter  className="font-small pt-4 mt-4 footer">
-            <MDBContainer fluid className="text-center text-md-left" style={{marginLeft: '2rem' }}>
+            <MDBContainer fluid className="text-center text-md-left" >
               <MDBRow>
                 <MDBCol md="4">
                   <h5 className="title" style={{color: 'white'}}>Subscribe to our Newsletter</h5>
                   <Form inline  id="form">
                 <FormControl type="text" placeholder="Subscribe" className="mr-sm-2" />
-                <Button style={{backgroundColor: 'blue', color: 'white'}}>Subscribe</Button>
+                <Button variant="primary" style={{color: 'white'}}>Subscribe</Button>
                </Form>
                 </MDBCol>
 

@@ -8,19 +8,19 @@ import Footer from './components/Footer'
 
  
 
-export default class Painting extends Component{
+export default class Sculpture extends Component{
 
     state={
         isLoaded: false,
-        paintings: []
+        sculptures: []
     }
 
 
     componentDidMount(){
-        axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/paintings?_embed')
+        axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/sculptures?_embed')
         .then((res) => {
             this.setState({
-                paintings: res.data,
+                sculptures: res.data,
                 isLoaded: true
             })
         })
@@ -45,7 +45,7 @@ export default class Painting extends Component{
                         alt="painting category"
                         />
                         <Carousel.Caption>
-                        <h1 style={{fontWeight: 'bold', color: 'black'}}>Paintings</h1>
+                        <h1 style={{fontWeight: 'bold', color: 'black'}}>Sculptures</h1>
                         <p style={{fontStyle: 'italic', fontSize: '24px', color: 'black'}} >
                             "Paintings have a life of their own that derives from the painter's soul." - Vincet Van Gogh
                         </p>
@@ -61,7 +61,7 @@ export default class Painting extends Component{
                         
                         />
                         <Carousel.Caption>
-                        <h1 style={{fontWeight: 'bold', color: 'bold'}}>Paintings</h1>
+                        <h1 style={{fontWeight: 'bold', color: 'bold'}}>Sculptures</h1>
                         <p style={{fontStyle: 'italic', fontSize: '24px'}}>
                             "Art washes away from the soul the dust of everyday life." - Pablo Picasso
                         </p>
@@ -76,17 +76,17 @@ export default class Painting extends Component{
                 {/* MAP THE PAINTING IMAGES  */}
                 {
 
-                    this.state.paintings.map(painting => {
+                    this.state.sculptures.map(sculpture => {
                         return(
-                        <Col sm={4} key={painting.id}>
+                        <Col sm={4} key={sculpture.id}>
                         <Card className="card">
-                            <Card.Img variant="top" src={painting._embedded['wp:featuredmedia']['0'].source_url} />
+                            <Card.Img variant="top" src={sculpture._embedded['wp:featuredmedia']['0'].source_url} />
                             <Button variant="dark" style={{ position: 'relative', bottom: '140px' }} className="shop-btn" onClick={
                                 () =>{
 
                                 window.location.href="/product-page"
-                                localStorage.setItem('id', painting.id)
-                                localStorage.setItem('postname', painting.acf['postname'])
+                                localStorage.setItem('id', sculpture.id)
+                                localStorage.setItem('postname', sculpture.acf['postname'])
                                 }
                             }>Shop Now</Button>
 

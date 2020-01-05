@@ -26,7 +26,7 @@ export default class Contact extends Component{
                           
                             <Form.Group controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Message</Form.Label>
-                                <Form.Control as="textarea" rows="5" />
+                                <Form.Control as="textarea" rows="5" placeholder="Write your message here"/>
                             </Form.Group>
                             <br />
                             <Button variant="primary" type="submit">

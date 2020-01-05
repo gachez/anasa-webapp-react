@@ -15,8 +15,8 @@ export default class Menu extends Component{
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
               <NavDropdown title="Explore" id="collasible-nav-dropdown" className="explore">
-                  <NavDropdown.Item href="#action/3.1">Paintings</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Sculptures</NavDropdown.Item>
+                  <NavDropdown.Item href="/paintings">Paintings</NavDropdown.Item>
+                  <NavDropdown.Item href="/sculptures">Sculptures</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Apparel</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">Support</NavDropdown.Item>

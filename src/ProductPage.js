@@ -99,9 +99,6 @@ export default class ProductPage extends Component {
                     <br />
                     <br />
                     <br />
-                    <br />
-                    <br />
-                    <br />
                     {/* DESCRIPTION AND BEST SELLERS SECTION STARTS HERE */}
                     <Container className="description-best-sellers-section">
                         <ButtonToolbar>

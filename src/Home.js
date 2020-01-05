@@ -120,6 +120,7 @@ export default class Home extends Component {
                       () =>{
                         window.location.href="/product-page"
                         localStorage.setItem('id', pick.id)
+                        localStorage.setItem('postname', pick.acf['postname'])
                       }
                     }>Shop Now</Button>
       
@@ -210,6 +211,7 @@ export default class Home extends Component {
 
                         window.location.href="/product-page"
                         localStorage.setItem('id', sculpture.id)
+                        localStorage.setItem('postname', sculpture.acf['postname'])
                       }
                     }>Shop Now</Button>
     

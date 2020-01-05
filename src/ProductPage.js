@@ -41,7 +41,7 @@ export default class ProductPage extends Component {
     render() {
 
         if (this.state.isLoaded) {
-            console.log(this.state.product.title.rendered)
+            console.log(this.state.product)
             return (
                 <div className="singe-product-page">
                     {/* THE MENU SECTION HERE */}
@@ -78,7 +78,12 @@ export default class ProductPage extends Component {
                                 <hr />
                                 <p id="details" dangerouslySetInnerHTML={{ __html: this.state.product.content.rendered }}></p>
                                 <br /><br /><br />
-                                <Button id="add-to-cart"> ADD TO CART</Button>
+                                <Button id="add-to-cart" onClick={
+                                    () =>{
+                                        window.location.href="/shopping-cart"
+                                        
+                                    }
+                                }> ADD TO CART</Button>
                                 <br />
                                 <br />
                                 <div className="social-icons">

@@ -3,9 +3,32 @@ import './styles-css/Checkout.css'
 import Menu from './components/Menu'
 import { Form ,Button, Container, Col, Table, Row, Breadcrumb} from 'react-bootstrap'
 import Footer from './components/Footer'
+import axios from 'axios'
+
 
 export default class Checkout extends Component{
+
+    state={
+        isLoaded: false,
+        product: []
+    }
+
+    componentDidMount(){
+        
+        axios.get(`https://anasaventures.com/dashboard/wp-json/wp/v2/${localStorage.postname}/${parseInt(localStorage.id)}`)
+        .then(res => {
+            this.setState({
+                product: res.data,
+                isLoaded: true
+            })
+        })
+        .catch(err => console.log(err))
+    }
+
     render(){
+      
+      if(this.state.isLoaded){
+        console.log(this.state.product)
         return(
             <div className="checkout-page">
                 <Menu />
@@ -16,14 +39,13 @@ export default class Checkout extends Component{
                     <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
                         checkout
                 </Breadcrumb.Item>
-                    <Breadcrumb.Item active>Data</Breadcrumb.Item>
                 </Breadcrumb>
                 <br /><br />
                 {/* SECTION THAT HOLDS THE BILLING DETAILS INPUT AND ORDER SUMMARY */}
                 <Container className="billing-and-order">
                    <Row>
                    <Col sm={6}>
-                    <h1 style={{padding: '25px'}}>Order details</h1>
+                    <h1 style={{padding: '24px'}}>Order details</h1>
                     <br />
                     <Form>
                     <Form.Group controlId="formBasicEmail">
@@ -73,7 +95,7 @@ export default class Checkout extends Component{
 
                     <Col sm={6}>
                     
-                        <h1 style={{padding: '25px'}}>Order Summary</h1>
+                        <h1 style={{padding: '24px'}}>Order Summary</h1>
                         <br /><hr />
                         <Table responsive>
                             <thead>
@@ -141,5 +163,9 @@ export default class Checkout extends Component{
                 <Footer />
             </div>
         )
+      }
+
+      return null
+
     }
 }

@@ -7,6 +7,7 @@ import Checkout from './Checkout'
 import Confirmation from './Confirmation';
 import About from './About';
 import Contact from './Contact'
+import Painting from './Paintings';
 
 
 const App = () =>{
@@ -21,7 +22,8 @@ const App = () =>{
                                  <Route exact path={"/checkout"} component={Checkout}></Route>   
                                  <Route exact path={"/confirmation"} component={Confirmation}></Route>       
                                  <Route exact path={"/about"} component={About}></Route>  
-                                 <Route exact path={"/contact"} component={Contact}></Route>            
+                                 <Route exact path={"/contact"} component={Contact}></Route>    
+                                 <Route exact path={"/paintings"} component={Painting}></Route>            
 
                                  </Switch>
            

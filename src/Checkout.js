@@ -50,12 +50,12 @@ export default class Checkout extends Component{
                     <Form>
                     <Form.Group controlId="formBasicEmail">
                             <Form.Label>Full Name</Form.Label>
-                            <Form.Control type="name" placeholder="Full Name" />
+                            <Form.Control type="name" name="full-name" placeholder="Full Name" required/>
                           
                         </Form.Group>   
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control type="email" name="email" placeholder="Enter email" required/>
                             <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                             </Form.Text>
@@ -63,27 +63,27 @@ export default class Checkout extends Component{
 
                         <Form.Group controlId="formBasicPassword">
                             <Form.Label>Phone number</Form.Label>
-                            <Form.Control type="number" placeholder="Password" />
+                            <Form.Control type="number" name="phone-number" placeholder="Phone number" required/>
                         </Form.Group>  
 
                            <Form.Group controlId="formBasicPassword">
                             <Form.Label>Country</Form.Label>
-                            <Form.Control type="name" value="Kenya" />
+                            <Form.Control type="name" name="country" value="Kenya" required/>
                         </Form.Group>  
 
                            <Form.Group controlId="formBasicPassword">
                             <Form.Label>County</Form.Label>
-                            <Form.Control type="text" placeholder="County" />
+                            <Form.Control type="text" name="county" placeholder="County" required/>
                         </Form.Group>  
 
                            <Form.Group controlId="formBasicPassword">
                             <Form.Label>Address line</Form.Label>
-                            <Form.Control type="address" placeholder="Address line" />
+                            <Form.Control type="address" name="address" placeholder="Address line" />
                         </Form.Group>  
 
                            <Form.Group controlId="formBasicPassword">
                             <Form.Label>Postcode</Form.Label>
-                            <Form.Control type="text" placeholder="Postcode" />
+                            <Form.Control type="text" name="postalcode" placeholder="Postcode" />
                         </Form.Group>                    
                         <Form.Group>
                         <Form.Check
@@ -107,20 +107,15 @@ export default class Checkout extends Component{
                             </thead>
                             <tbody>
                                 <tr>
-                                <td>Ibrahim painting</td>
+                                <td dangerouslySetInnerHTML={{__html: this.state.product.title.rendered}}></td>
                                 <td>x01</td>
-                                <td>$450</td>
+                                <td>{this.state.product.acf['price']}</td>
                                 </tr>
-                                <tr>
-                                <td>Wooden sculpture</td>
-                                <td>x02</td>
-                                <td>$560</td>
-                                </tr>
-
+                        
                                 <tr>
                                 <td>SUBTOTAL</td>
                                 <td></td>
-                                <td>$1570</td>
+                                <td>{this.state.product.acf['price']}</td>
                                 </tr>
                             </tbody>
                         </Table>
@@ -135,7 +130,23 @@ export default class Checkout extends Component{
                         />
                     </Form.Group>
                     <br />
-                    <Button variant="danger" id="complete-order">COMPLETE ORDER</Button>
+                    <Button variant="danger" id="complete-order" type="submit" onClick={
+                        () =>{
+
+                            let orderDets = {
+                                fullname: document.getElementsByName('full-name')[0].value,
+                                email: document.getElementsByName('email')[0].value,
+                                phone: document.getElementsByName('phone-number')[0].value,
+                                country: document.getElementsByName('country')[0].value,
+                                county: document.getElementsByName('county')[0].value,
+                                address: document.getElementsByName('address')[0].value,
+                                postalcode: document.getElementsByName('postalcode')[0].value
+                            }
+
+                            window.location.href="/confirmation"
+                            localStorage.setItem('orderDetails', JSON.stringify(orderDets) )
+                        }
+                    }>COMPLETE ORDER</Button>
                     </Col>   
                        </Row>
                        <br />

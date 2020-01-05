@@ -23,35 +23,35 @@ export default class Home extends Component {
 
   componentDidMount() {
 
-   axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/top?_embed')
-   .then((res) => {
-     this.setState({
-       topPicksThumbnails: res.data
-     })
-   })
-   .catch(err => console.log(err))
-
-    axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/paintings?_embed')
-      .then((res) => {
-        this.setState({
-          paintingsThumbnails: res.data
-        })
-      })
-      .catch(err => console.log(err))
-
-    this.setState({
-      isLoaded: true
-    })
-
-    axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/sculptures?_embed')
-    .then((res) =>{
+    axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/top?_embed')
+    .then((res) => {
       this.setState({
-        sculpturesThumbnails: res.data
+        topPicksThumbnails: res.data
       })
     })
     .catch(err => console.log(err))
 
-    localStorage.clear()
+      axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/paintings?_embed')
+        .then((res) => {
+          this.setState({
+            paintingsThumbnails: res.data
+          })
+        })
+        .catch(err => console.log(err))
+
+      this.setState({
+        isLoaded: true
+      })
+
+      axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/sculptures?_embed')
+      .then((res) =>{
+        this.setState({
+          sculpturesThumbnails: res.data
+        })
+      })
+      .catch(err => console.log(err))
+
+      localStorage.clear()
   }
 
 

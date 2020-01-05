@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Menu from './components/Menu'
 import { Table, Container, Media, Button } from 'react-bootstrap'
-import ibrahim from './images/ibrahim-al-salahi.png'
-import woman from './images/womanology.jpg'
+
 import Footer from './components/Footer'
 import { Breadcrumb } from 'react-bootstrap'
 import axios from 'axios'

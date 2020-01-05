@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel'
-import {Card, CardDeck,Col,Button} from 'react-bootstrap'
+import { Card, CardDeck, Col, Button } from 'react-bootstrap'
+import axios from 'axios'
 import './styles-css/Home.css'
 import hero from './images/hero-image.jpg'
 import humble from './images/humble.jpg'
 import sculpture from './images/woman-african-people-black-girl-female.jpg'
-import first from './images/first.jpg'
-import afroart from './images/afroart.jpg'
-import ibrahim from './images/ibrahim-al-salahi.png'
-import woman from './images/womanology.jpg'
-
-import afro from './images/afro.jpg'
-import download from './images/download.jpeg'
-import village from './images/interesting-village-cultural-african-wallpaper-preview.jpg'
-import wooden from './images/wooden-mask-africa-carved-figure.jpg'
-import modern from './images/Modern_Makonde_carving_in_ebony.jpg'
-import painter from './images/08f180dd1ec69f11f72c2b4db0eca7b0.jpg'
-
 import Footer from './components/Footer'
 import Menu from './components/Menu'
 
@@ -25,24 +14,53 @@ import Menu from './components/Menu'
 
 export default class Home extends Component {
 
-  state={
-    isLoaded: false
+  state = {
+    isLoaded: false,
+    paintingsThumbnails: [],
+    topPicksThumbnails: [],
+    sculpturesThumbnails: []
   }
 
-  componentDidMount(){
+  componentDidMount() {
+
+   axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/top?_embed')
+   .then((res) => {
+     this.setState({
+       topPicksThumbnails: res.data
+     })
+   })
+   .catch(err => console.log(err))
+
+    axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/paintings?_embed')
+      .then((res) => {
+        this.setState({
+          paintingsThumbnails: res.data
+        })
+      })
+      .catch(err => console.log(err))
+
     this.setState({
       isLoaded: true
     })
+
+    axios.get('https://anasaventures.com/dashboard/wp-json/wp/v2/sculptures?_embed')
+    .then((res) =>{
+      this.setState({
+        sculpturesThumbnails: res.data
+      })
+    })
+    .catch(err => console.log(err))
+
+    localStorage.clear()
   }
 
 
-  render(){
-    if(this.state.isLoaded){
-
+  render() {
+    if (this.state.isLoaded) {
 
       return (
         <div className="Homepage" id="home-page">
-          
+
           {/* MENU SECTION STARTS HERE : THIS IS A RESPONSIVE NAVBAR IMPORTED FROM BOOTSTRAP */}
           <Menu />
           {/* MENU SECTION ENDS HERE */}
@@ -87,106 +105,125 @@ export default class Home extends Component {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-          
+
           {/* HERO SECTION ENDS HERE */}
           <br /><br />
           {/* TOP PICKS SECTION STARTS HERE */}
-          <h1 style={{padding : '55px'}}>Top picks of the week</h1>
+          <h1 style={{ padding: '55px' }}>Top picks of the week</h1>
           <CardDeck>
-            <Card className="card">
-              <Card.Img variant="top" src={first} />
-              <Button variant="light" id="first-btn" className="shop-btn">Shop Now</Button>
-            
- 
-            </Card>
-            <Card className="card">
-              <Card.Img variant="top" src={afroart} />
-              <Button variant="light" className="shop-btn">Shop Now</Button>
- 
-            </Card>
-            <Card className="card">
-              <Card.Img variant="top" src={ibrahim} />
-              <Button variant="light" className="shop-btn">Shop Now</Button>
-             
-            
-            </Card>
+            {
+                this.state.topPicksThumbnails.map(pick => {
+                  return(
+                    <Card className="card" key={pick.id}>
+                    <Card.Img variant="top" src={pick._embedded['wp:featuredmedia']['0'].source_url} />
+                    <Button variant="light" id="first-btn" className="shop-btn" onClick={
+                      () =>{
+                        window.location.href="/product-page"
+                        localStorage.setItem('id', pick.id)
+                      }
+                    }>Shop Now</Button>
+      
+      
+                  </Card>
+                  )
+                })
+            }
+       
+         
           </CardDeck>
 
           {/* TOP PICKS SECTION ENDS HERE */}
-          <br /><br/>
+          <br /><br />
           {/* PAINTINGS SECTION STARTS HERE */}
-          <h1 style={{padding: '55px'}}>Paintings</h1>
-            <CardDeck>
-            <Col sm={4}>
-            <Card className="card">
-              <Card.Img variant="top" src={afro} />
-              <Button variant="dark" style={{position: 'relative', bottom: '140px'}} className="shop-btn">Shop Now</Button>
-            
- 
-            </Card>
-            </Col>  
-           
-           <Col sm={4}>
-           <Card className="card" >
-              <Card.Img variant="top" src={woman}/>
-              <Button variant="dark" style={{position: 'relative', bottom: '140px'}}className="shop-btn">Shop Now</Button>
- 
-            </Card>
+          <h1 style={{ padding: '55px' }}>Paintings</h1>
+          <CardDeck>
 
-           </Col>
-           <Col>
-           <Card className="card" >
-              <Card.Img variant="top" src={download} />
-              <Button variant="dark"  style={{position: 'relative', bottom: '140px'}} className="shop-btn">Shop Now</Button>
+            {/* MAP THE PAINTING IMAGES  */}
+            {
             
- 
-            </Card>
-           </Col>         
-           
-           <Col sm={4}>
-           <Card className="card">
-              <Card.Img variant="top" src={painter} />
-              <Button variant="dark" style={{position: 'relative', bottom: '140px'}} className="shop-btn">Shop Now</Button>
- 
-            </Card>
-           </Col>
-           
+              this.state.paintingsThumbnails.map(painting => {
+                return(
+                  <Col sm={4} key={painting.id}>
+                  <Card className="card">
+                    <Card.Img variant="top" src={painting._embedded['wp:featuredmedia']['0'].source_url} />
+                    <Button variant="dark" style={{ position: 'relative', bottom: '140px' }} className="shop-btn" onClick={
+                        () =>{
+
+                          window.location.href="/product-page"
+                          localStorage.setItem('id', painting.id)
+                          localStorage.setItem('postname', painting.acf['postname'])
+                        }
+                    }>Shop Now</Button>
+    
+    
+                  </Card>
+                </Col>
+                )
+              })
+            
+            
+            }
+  
+
+            {/* <Col sm={4}>
+              <Card className="card" >
+                <Card.Img variant="top" src={woman} />
+                <Button variant="dark" style={{ position: 'relative', bottom: '140px' }} className="shop-btn">Shop Now</Button>
+
+              </Card>
+
+            </Col>
+            <Col>
+              <Card className="card" >
+                <Card.Img variant="top" src={download} />
+                <Button variant="dark" style={{ position: 'relative', bottom: '140px' }} className="shop-btn">Shop Now</Button>
+
+
+              </Card>
+            </Col>
+
+            <Col sm={4}>
+              <Card className="card">
+                <Card.Img variant="top" src={painter} />
+                <Button variant="dark" style={{ position: 'relative', bottom: '140px' }} className="shop-btn">Shop Now</Button>
+
+              </Card>
+            </Col> */}
+
           </CardDeck>
-            
-          
+
+
           {/* PAINTINGS SECTION ENDS HERE */}
           <br /><br />
-          
-          {/* SCULPTURES SECTION STARTS HERE */}
-             <h1 style={{padding: '55px'}}>Sculptures</h1>
-            <CardDeck>
-            <Col sm={4}>
-            <Card className="card">
-              <Card.Img variant="top" src={village} />
-              <Button variant="dark" style={{position: 'relative', bottom: '140px'}} className="shop-btn sculpt">Shop Now</Button>
-            
- 
-            </Card>
-            </Col>  
-           
-           <Col sm={4}>
-           <Card className="card" sm={4}>
-              <Card.Img variant="top" src={modern} />
-              <Button variant="dark" style={{position: 'relative', bottom: '140px'}} className="shop-btn sculpt">Shop Now</Button>
- 
-            </Card>
 
-           </Col>
-           <Col sm={4}>
-           <Card className="card" >
-              <Card.Img variant="top" src={wooden}/>
-              <Button variant="dark" style={{position: 'relative', bottom: '140px'}} className="shop-btn sculpt">Shop Now</Button>
-             
-            
-            </Card>
-           </Col>
-                     
-         
+          {/* SCULPTURES SECTION STARTS HERE */}
+          <h1 style={{ padding: '55px' }}>Sculptures</h1>
+          <CardDeck>
+            {
+              this.state.sculpturesThumbnails.map(sculpture =>{
+                return(
+                  <Col sm={4} key={sculpture.id}>
+                  <Card className="card">
+                    <Card.Img variant="top" src={sculpture._embedded['wp:featuredmedia']['0'].source_url} />
+                    <Button variant="dark" style={{ position: 'relative', bottom: '140px' }} className="shop-btn sculpt" onClick={
+                      () =>{
+
+                        window.location.href="/product-page"
+                        localStorage.setItem('id', sculpture.id)
+                      }
+                    }>Shop Now</Button>
+    
+    
+                  </Card>
+                </Col>
+                )
+              })
+            }
+    
+
+          
+
+
           </CardDeck>
           {/* SCULPTURES SECTION ENDS HERE */}
           <br /><br /><br /><br />
@@ -198,14 +235,14 @@ export default class Home extends Component {
         </div>
       );
 
-     
-    
+
+
 
     }
 
     return null
 
-   
+
   }
 }
 

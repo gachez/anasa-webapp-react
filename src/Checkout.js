@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './styles-css/Checkout.css'
 import Menu from './components/Menu'
-import { Form ,Button, Container, Col, Table, Row} from 'react-bootstrap'
+import { Form ,Button, Container, Col, Table, Row, Breadcrumb} from 'react-bootstrap'
 import Footer from './components/Footer'
 
 export default class Checkout extends Component{
@@ -9,7 +9,16 @@ export default class Checkout extends Component{
         return(
             <div className="checkout-page">
                 <Menu />
-                <br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br />
+                    {/* THE BREADCRUMB SECTION */}
+                    <Breadcrumb>
+                    <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+                    <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
+                        checkout
+                </Breadcrumb.Item>
+                    <Breadcrumb.Item active>Data</Breadcrumb.Item>
+                </Breadcrumb>
+                <br /><br />
                 {/* SECTION THAT HOLDS THE BILLING DETAILS INPUT AND ORDER SUMMARY */}
                 <Container className="billing-and-order">
                    <Row>

@@ -10,7 +10,7 @@ export default class Menu extends Component{
 
         return(
             <Navbar collapseOnSelect expand="lg" className="menu" fixed="top">
-            <Navbar.Brand href="/"><img src={logo} height="60px" alt="logo"/></Navbar.Brand>
+            <Navbar.Brand href="/"><img src={logo} height="54px" alt="logo"/></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
